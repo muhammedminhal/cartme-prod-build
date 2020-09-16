@@ -10,7 +10,7 @@ app.use((req,res,next)=>{
 app.get('/*',(req,res)=>{
     res.sendFile(__dirname+'/dist/index.html')
 })
-app.listen(4300, function () {
+app.listen(8080, function () {
     console.log('App is listening on port ' );
 });
 } catch (error) {
