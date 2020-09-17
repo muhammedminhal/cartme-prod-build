@@ -1,0 +1,302 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Title -->
+    <title>Cartme login</title>
+
+    <!-- Meta -->
+    <meta charset="utf-8" />
+    <meta
+      name="viewport"
+      content="width=device-width, intial-scale=1, max-scale=1"
+    />
+    <meta name="author" content="" />
+    <meta name="description" content="" />
+    <meta name="keywords" content="" />
+
+    <!-- Favicon -->
+    <link
+      rel="shortcut icon"
+      href="images/general-elements/favicon/favicon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      href="images/general-elements/favicon/apple-touch-icon.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="72x72"
+      href="images/general-elements/favicon/apple-touch-icon-72x72.png"
+    />
+    <link
+      rel="apple-touch-icon"
+      sizes="114x114"
+      href="images/general-elements/favicon/apple-touch-icon-114x114.png"
+    />
+
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/skins/default.css" data-color-skins="" />
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  </head>
+  <body>
+    <section
+      class="logo-and-nav fulwidth"
+      style="margin-top: 0px; position: fixed; top: 0px"
+    >
+      <div class="container-fluid">
+        <div class="row">
+          <div class="col-md-12">
+            <!-- Logo -->
+            <!-- <a class="logo text-logo" href="#"> -->
+            <div class="brand">
+              <img src="images/general-elements/cartme-logo.png" alt="" />
+              <h3 class="cart">Cart me</h3>
+            </div>
+          </div>
+          <!-- End col-md-12 -->
+        </div>
+        <!-- End row -->
+      </div>
+      <!-- End container -->
+    </section>
+    <div class="container mt-120">
+        <div class="text-center">
+      <h2 class="logintxt">
+        Create a account to start <br />your membership
+      </h2>
+    </div>
+    <div>
+        <div class="row">
+            <div class="col-12">
+      <form class="form-horizontal pt-50" id="signup_first">
+        <div class="form-group">
+          
+          <div class="col-12 col-md-6 col-md-offset-3">
+            <input
+              type="text"
+              class="form-control "
+              id="name"
+              placeholder="Name*"
+              name="strName"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+
+          <div class="col-12 col-md-6 col-md-offset-3">
+            <input
+              type="mobile"
+              class="form-control"
+              id="mobile"
+              placeholder="Mobile*"
+              name="strMobileNo"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          
+          <div class="col-12 col-md-6 col-md-offset-3">
+            <input
+              type="email"
+              class="form-control"
+              id="email"
+              placeholder="Email*"
+              name="strEmail"
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          
+          <div class="col-12 col-md-6 col-md-offset-3">
+            <input
+              type="password"
+              class="form-control"
+              id="pwd1"
+              placeholder="Password*"
+              name="strPassword"
+              required
+            />
+          </div>
+        </div>
+        <div class="form-group">
+          
+          <div class="col-12 col-md-6 col-md-offset-3">
+            <input
+              type="password"
+              class="form-control"
+              id="pwd2"
+              placeholder="Confirm Password*"
+              name="pwd"
+              required
+            />
+          </div>
+        </div>
+        <p class="pass-alert" id="pass_alert" style="display: none;color: brown;">*Passwords do not match</p>
+
+        <div class="form-group">
+          
+          <div class="col-12 col-md-6 col-md-offset-3">
+            <input
+              type="text"
+              class="form-control"
+              id="shopname"
+              placeholder="Shop name"
+              name="strShopeName"
+              required
+            />
+          </div>
+        </div>
+
+        <div class="form-group" style="display: none;">
+          
+          <div class="col-12 col-md-6 col-md-offset-3">
+            <input
+              type="text"
+              class="form-control"
+              id="register"
+              placeholder="Shop name"
+              name="strStep"
+              value="REGISTER"
+            />
+          </div>
+        </div>
+
+        <!-- <div class="form-group">
+          
+          <div class="col-12 col-md-6 col-md-offset-3">
+            <div>Click the upload icon below to upload image.</div><br>
+
+        <div class="image-upload">
+            <label for="file-input image-label">
+                <img id="image-view" src="data:image/png;base64,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"/>
+                
+            </label>
+        
+            <input id="file-input" type="file" onchange="readURL(this)" id="blah"/>
+        </div>
+          </div>
+        </div> -->
+       
+
+
+        <div class="form-group">
+          <div class="col-12 col-md-12 text-center">
+            <button type="submit" class="btn btn-default cont">Continue</button>
+          </div>
+        </div>
+      </form>
+      <form class="form-horizontal pt-50" id="signup_otp" style="display: none;">
+        <div class="container">
+          <div class="row">
+            <div class="col-12">
+              <div>
+                <input id="partitioned" class="mt-60" type="text" maxlength="6" name="otp" />
+                <input type="text" name="sessionid" id="sessionid" style="display: none;">
+              </div>
+            </div>
+          </div>
+          <div id="outer" class="row">
+            <div class="col-md-12 text-center">
+            <!-- <button class="msgBtnBack clb  form-btn float-left">Back</button> -->
+           <button type="submit" class="msgBtn cl  form-btn" >Submit</button>
+          </div>
+        </div>
+      </form>
+    </div>
+</div>
+</div>
+<script>
+// function readURL(input) {
+//   alert("done")
+//         if (input.files && input.files[0]) {
+//             var reader = new FileReader();
+
+//             reader.onload = function (e) {
+//                 $('#image-view')
+//                     .attr('src', e.target.result)
+//                     .width(150)
+                    
+//             };
+
+//             reader.readAsDataURL(input.files[0]);
+//         }
+//     } 
+
+    $("#signup_first").submit((event)=>{
+      event.preventDefault()
+      
+      if(!($("#pwd1").val()==$("#pwd2").val())){
+        $("#pass_alert").show()
+        return false
+      }
+      console.log( $("#signup_first"));
+     // var data =  $("#signup_first").serialize() ;
+      var name= $('#name').val()
+      var mobile=$('#mobile').val()
+      var email=$('#email').val()
+      var shop=$('#shopname').val()
+      var pwd=$('#pwd1').val()
+      var register=$('#register').val()
+
+      var data={"strName":name,"strMobileNo":mobile,"strEmail":email,"strPassword":pwd,"strShopeName":shop,"strStep":register}
+
+      $.ajax({
+        method:"POST",
+        url:"http://15.207.68.165:4000/user/forgot_password",
+        data:JSON.stringify(data),
+        type:'json',
+        
+        contentType:"application/json; charset=utf-8",
+        beforeSend: function(request) {
+         request.setRequestHeader("strAppinfo", shop);
+      },
+        success:(response)=>{
+          console.log(response);
+          
+          $("#signup_otp").show()
+          $("#signup_first").hide()
+          console.log(response.Details);
+         $('#sessionid').value=response.Details
+         console.log($('#sessionid').val(response.Details));
+        },
+        error:(err)=>{
+          console.log(err);
+        }
+      })
+    })
+    $("#signup_otp").submit((event)=>{
+      event.preventDefault()
+      var mobile=$('#mobile').val()
+      var otp= $('#partitioned').val()
+      var name= $('#name').val()
+      var shop=$('#shopname').val()
+      var session= $('#sessionid').val()
+      var data={"strOTP":otp,"strMobileNo":mobile,"strStep":"VERIFY","strRegister":true,
+      "strName":name,"strSessionId":session}
+      $.ajax({
+        method:"POST",
+        url:"http://15.207.68.165:4000/user/forgot_password",
+        data:JSON.stringify(data),
+        type:'json',
+        contentType:"application/json; charset=utf-8",
+        beforeSend: function(request) {
+         request.setRequestHeader("strAppinfo", shop);
+      },
+        success:(response)=>{
+          location.href="index.html"
+          
+        },
+        error:(err)=>{
+          console.log(err);
+        }
+      })
+    })
+
+    
+</script>
+  </body>
+</html>
+<!-- 15.207.68.165 -->
