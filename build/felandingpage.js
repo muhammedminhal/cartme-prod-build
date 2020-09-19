@@ -15,8 +15,8 @@ try {
         else
             res.sendFile(__dirname + '/landingpage/index.html')
     })
-    app.listen(4300, function () {
-        console.log('App is listening on port 4300');
+    app.listen(8080, function () {
+        console.log('App is listening on port 8080');
     });
 } catch (error) {
     console.log(error);
