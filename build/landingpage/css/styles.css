@@ -2493,7 +2493,7 @@ nav#main-nav {
 .flat-section {
 	width: 100%;
 	/* have to use padding properties separately due to avoiding jQuery purposes conflict */
-	padding: 20px 0;
+	padding: 48px 0;
 	position: relative;
 }
 
