@@ -21,7 +21,14 @@
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/skins/default.css" data-color-skins="" />
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+   
+    <script src="https://code.jquery.com/jquery-1.12.4.min.js" 
+    integrity="sha384-nvAa0+6Qg9clwYCGGPpDQLVpLNn0fRaROjHqs13t4Ggj3Ez50XnGQqc/r8MhnRDZ" 
+    crossorigin="anonymous">
+</script>
+    <script src="intl-tel-input-master/build/js/intlTelInput-jquery.js"></script>
+    <link rel="stylesheet" href="intl-tel-input-master/build/css/intlTelInput.css"> 
+
 </head>
 
 <body>
@@ -61,7 +68,7 @@
                         <div class="form-group">
 
                             <div class="col-12 col-md-6 col-md-offset-3">
-                                <input type="mobile" class="form-control" id="mobile" placeholder="Mobile*" name="strMobileNo" required />
+                                <input type="mobile" class="form-control phone-field" id="mobile" placeholder="Mobile*" name="strMobileNo" required />
                             </div>
                         </div>
                         <div class="form-group">
@@ -70,6 +77,15 @@
                                 <input type="email" class="form-control" id="email" placeholder="Email*" name="strEmail" />
                             </div>
                         </div>
+                        
+                        <div class="form-group">
+
+                            <div class="col-12 col-md-6 col-md-offset-3">
+                                <input type="text" class="form-control" id="shopname" placeholder="Shop name" name="strShopeName" required />
+                                <!-- <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small> -->
+
+                            </div>
+                        </div>  
                         <div class="form-group">
 
                             <div class="col-12 col-md-6 col-md-offset-3">
@@ -84,12 +100,6 @@
                         </div>
                         <p class="pass-alert" id="pass_alert" style="display: none;color: brown;">*Passwords do not match</p>
 
-                        <div class="form-group">
-
-                            <div class="col-12 col-md-6 col-md-offset-3">
-                                <input type="text" class="form-control" id="shopname" placeholder="Shop name" name="strShopeName" required />
-                            </div>
-                        </div>
 
                         <div class="form-group" style="display: none;">
 
@@ -243,6 +253,29 @@
                 })
             </script>
 </body>
+<script>
+    function disableSpace(e){
+        if(e.which===32){
+            alert("ss")
+            return false
+        }
+    }
+    // $("#shopname").on("change", function (e) {
+    
+    //     let text=$(this).val()
+    //     alert(text)
+    // });
+    $("#shopname").on({
+  keydown: function(e) {
+    if (e.which === 32)
+      return false;
+  },
+  change: function() {
+    this.value = this.value.split(' ').join('');
+  }
+});
 
+$("#mobile").CcPicker();
+</script>
 </html>
 <!-- 15.207.68.165 -->
