@@ -93,20 +93,18 @@
 
                             <!-- <div class="col-12 col-md-3 col-md-offset-3"> -->
                             <div class="mtop col-md-3 col-md-offset-3">
-                                <input type="text" class="form-control" id="state" placeholder="State*" name="strState" required />
+                                <input type="text" class="form-control" id="pincode" placeholder="Pincode*" name="strPinCode" required />
                             </div>
                             <div class="mtop col-md-3 ">
-                                <input type="text" class="form-control" id="district" placeholder="District*" name="strDistrict" required />
+                                <input type="text" class="form-control" id="state" placeholder="State*" name="strState" required />
                             </div>
-
-
                             <!-- </div> -->
                         </div>
                         <div class="form-group">
 
                             <!-- <div class="col-12 col-md-3 col-md-offset-3"> -->
                             <div class="mtop col-md-3 col-md-offset-3">
-                                <input type="text" class="form-control" id="pincode" placeholder="Pincode*" name="strPinCode" required />
+                                <input type="text" class="form-control" id="district" placeholder="District*" name="strDistrict" required />
                             </div>
                             <div class="mtop col-md-3 ">
                                 <input type="text" class="form-control" id="city" placeholder="City*" name="strCity" required />
@@ -157,7 +155,7 @@
 
                         <div class="form-group">
                             <div class="col-12 col-md-12 text-center">
-                                <button type="submit" class="btn btn-default cont">Continue</button>
+                                <button type="submit" class="btn btn-default cont" onclick="alphachracter()">Continue</button>
                             </div>
                         </div>
                     </form>
@@ -225,7 +223,7 @@
 
                     var data = {
                         "strName": name,
-                        "strMobileNo": '+91' + mobile,
+                        "strMobileNo": '91' + mobile,
                         "strEmail": email,
                         "strPassword": pwd,
                         "strShopeName": shop,
@@ -272,7 +270,7 @@
                     var session = $('#sessionid').val()
                     var data = {
                         "strOTP": otp,
-                        "strMobileNo": '+91' + mobile,
+                        "strMobileNo": '91' + mobile,
                         "strStep": "VERIFY",
                         "strRegister": true,
                         "strName": name,
@@ -300,6 +298,18 @@
             </script>
 </body>
 <script>
+    function alphachracter() {
+        var letters = /^[a-zA-Z]+$/;
+        if (document.getElementById("shopname").value.match(letters)) {
+            // alert('Your registration number have accepted : you can try another');
+            document.form1.text1.focus();
+            return true;
+        } else {
+            alert('Please input alpha characters only');
+            return false;
+        }
+    }
+
     function disableSpace(e) {
         if (e.which === 32) {
             alert("ss")
